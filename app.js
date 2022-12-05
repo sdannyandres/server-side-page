@@ -8,4 +8,9 @@ app.get("/template1", function(req, res){
         title: "curso 2022",message: 'hola a todos desde pug'
     })
 })
+
+app.get("*", (req, res) => {
+    res.redirect("/public/404.html")
+})
+
 app.listen(3344)
