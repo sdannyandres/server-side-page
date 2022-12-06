@@ -13,4 +13,12 @@ app.get("*", (req, res) => {
     res.redirect("/public/404.html")
 })
 
+app.get("/error", (req, res) => {
+    throw new Error("se ha producido un error y no puede segur")
+})
+
+app.use((error, req,res,next)=>{
+    res.status(500).send("error interno")}
+)
+
 app.listen(3344)
